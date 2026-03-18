@@ -32,12 +32,41 @@ namespace activi_14_01
         {
             Console.WriteLine($"Nombre: {Nombre} | Promedio: {CalcularPromedio():F2} | Estado: {ObtenerEstado()}");
         }
+    }
+        class program
+    {
+        static void Main()
+        {
+            List<Estudiante> estudiantes = new List<Estudiante>();
 
+            Console.WriteLine("Cuantos Estudiantes desea Ingresar ");
+            int n = int.Parse(Console.ReadLine());
 
+            for (int i = 0; i < n; i++) // Registro de Datos 
+            {
+                Estudiante e = new Estudiante();
+                Console.WriteLine($"\nEstudiante {i + 1}");
+                Console.Write("Nombre: ");
+                e.Nombre = Console.ReadLine();
+                Console.Write("Nota 1: ");
+                e.Nota1 = double.Parse(Console.ReadLine());
 
+                Console.Write("Nota 2: ");
+                e.Nota2 = double.Parse(Console.ReadLine());
 
+                Console.Write("Nota 3: ");
+                e.Nota3 = double.Parse(Console.ReadLine());
 
+                estudiantes.Add(e);
+            }
 
+        }
 
     }
+
+
+
+
+
+    
 }
