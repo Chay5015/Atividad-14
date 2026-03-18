@@ -59,6 +59,27 @@ namespace activi_14_01
 
                 estudiantes.Add(e);
             }
+                
+            double sumaPromedios = 0;
+            Estudiante mejor = estudiantes[0];
+
+            Console.WriteLine(" LISTADO DE ESTUDIANTES ");
+
+            foreach( Estudiante e in estudiantes ) // Mejor promedio 
+            {
+                e.MostrarDatos();
+               sumaPromedios += e.CalcularPromedio();
+
+                if (e.CalcularPromedio ()>mejor.CalcularPromedio ())
+                {
+                    mejor = e;
+                }
+            }
+            Console.WriteLine($"\nPromedio general del grupo: {sumaPromedios / estudiantes.Count:F2}");
+
+            Console.WriteLine("\nMejor estudiante:");
+            mejor.MostrarDatos();
+
 
         }
 
